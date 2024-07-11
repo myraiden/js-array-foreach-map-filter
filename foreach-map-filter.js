@@ -179,7 +179,9 @@ Examples:
 */
 
 function filterByValue(arr, key) {
-
+    return filteredArray=arr.filter(function(byValValue, byValIndex,byValArray){
+        return byValValue[key]===true;
+    });
 }
 
 /*
@@ -191,7 +193,10 @@ Examples:
 */
 
 function find(arr, searchValue) {
-
+    let foundValue=arr.filter(function(search,searchIndex,searchArr){
+        return search===searchValue;
+    })
+    return foundValue[0];
 }
 
 /*
@@ -202,7 +207,10 @@ Examples:
 */
 
 function findInObj(arr, key, searchValue) {
-
+    let catOwner=arr.filter(function(ownerValue, ownerIndex,ownerArray){
+        return ownerValue[key]===searchValue;
+    });
+    return catOwner[0];
 }
 
 /*
@@ -227,5 +235,5 @@ Examples:
 */
 
 function doubleOddNumbers(arr) {
-    
+
 }
