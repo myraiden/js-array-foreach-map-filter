@@ -223,7 +223,20 @@ Examples:
 */
 
 function removeVowels(str) {
+    let vowelsOptions=['a','e','i','o','u'];
+    let lowerCaseStr=str.toLowerCase().split("");
 
+    let vowelsFilter=vowelsOptions.filter(function(vowelValue,vowelIndex,vowelArray){
+        let vowelsRemoved=lowerCaseStr.filter(function(charValue,charIndex,charArray){
+            if(charValue!=vowelValue){
+                return charValue;
+            };
+        })
+        lowerCaseStr=vowelsRemoved;        
+        return lowerCaseStr;
+    })
+    return lowerCaseStr.join(''); 
+    
 }
 
 /*
@@ -235,5 +248,13 @@ Examples:
 */
 
 function doubleOddNumbers(arr) {
-
+    //filter for the odd numbers
+    let filterOdds=arr.filter(function(oddValue){
+        return (oddValue%2!=0);
+    })
+    
+    //double the numbers
+    return filterOdds.map(function(doubleOddValue,doubleOddIndex,doubleOddArray){
+        return doubleOddValue*2;
+    });
 }
